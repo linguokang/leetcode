@@ -1,25 +1,26 @@
 //解法一：
-var lengthOfLongestSubstring = function(s) {
+var lengthOfLongestSubstring = function (s) {
     let arr = []
     let max = 0
-    for(let i=0;i<s.length;i++){
+    for (let i = 0; i < s.length; i++) {
         let index = arr.indexOf(s.charAt(i))
-        if(index != -1){
-            arr.splice(0, index+1);
+        if (index != -1) {
+            arr.splice(0, index + 1);
         }
         arr.push(s.charAt(i))
-        max = Math.max(max,arr.length)
+        max = Math.max(max, arr.length)
     }
     return max
 }
 
 //解法二：
-var lengthOfLongestSubstring = function(s) {
+var lengthOfLongestSubstring = function (s) {
     // 哈希集合，记录每个字符是否出现过
     const occ = new Set();
     const n = s.length;
     // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
-    let rk = -1, ans = 0;
+    let rk = -1,
+        ans = 0;
     for (let i = 0; i < n; ++i) {
         if (i != 0) {
             // 左指针向右移动一格，移除一个字符

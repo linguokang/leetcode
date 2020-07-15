@@ -1,7 +1,7 @@
-var isValid = function(s) {
+var isValid = function (s) {
     let arr = []
-    for(let i=0;i<s.length;i++){
-        switch (s.charAt(i)){
+    for (let i = 0; i < s.length; i++) {
+        switch (s.charAt(i)) {
             case '(':
                 arr.push('(')
                 break
@@ -12,17 +12,17 @@ var isValid = function(s) {
                 arr.push('{')
                 break
             case ')':
-                if(arr.pop() !== '('){
+                if (arr.pop() !== '(') {
                     return false
                 }
                 break
             case ']':
-                if(arr.pop() !== '['){
+                if (arr.pop() !== '[') {
                     return false
                 }
                 break
             case '}':
-                if(arr.pop() !== '{'){
+                if (arr.pop() !== '{') {
                     return false
                 }
                 break

@@ -10,17 +10,17 @@
  * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function(head, n) {
+var removeNthFromEnd = function (head, n) {
     let pre = new ListNode(-1)
     pre.next = head
     let fast = pre
     let slow = pre
 
-    while(n--){
+    while (n--) {
         fast = fast.next
     }
 
-    while(fast && fast.next){
+    while (fast && fast.next) {
         fast = fast.next
         slow = slow.next
     }
