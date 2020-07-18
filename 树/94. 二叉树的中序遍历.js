@@ -1,7 +1,8 @@
-var inorderTraversal = function(root) {
+var inorderTraversal = function (root) {
     let result = []
-    function dfs(root){
-        if(!root){
+
+    function dfs(root) {
+        if (!root) {
             return
         }
         root.left && dfs(root.left)
