@@ -37,6 +37,26 @@ function curry(fn, currArgs) {
 }
 
 
+function  test(...params) {
+    console.log(params)
+}
+test(12,345,53)
+
+
+function curry(fn, currArgs) {
+    return function (...args) {
+        let contactArgs  = args
+        if (currArgs !== undefined) {
+            contactArgs = [...currArgs, ...args]
+        }
+        if(contactArgs.length >= fn.length){
+            return fn(...contactArgs)
+        }else{
+            return curry(fn, contactArgs)
+        }
+    }
+}
+
 function sum(a, b, c) {
     console.log(a + b + c);
 }
